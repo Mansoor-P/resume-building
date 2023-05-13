@@ -1,106 +1,308 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Home Page</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/styles/main.css">
-        <script src="./assets/js/app.js"></script>
-        <script src="./assets/js/script.js"></script>
-    </head>
-    <body>
 
-        <nav class = "navbar bg-white">
-            <div class="container">
-                <div class = "navbar-content">
-                    <div class = "brand-and-toggler">
-                        <a href = "index.html" class = "navbar-brand">
-                            <img src = "assets/images/curriculum-vitae.png" alt = "" class = "navbar-brand-icon">
-                            <span class = "navbar-brand-text">build <span>resume.</span>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+    </style>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script> -->
+
+    <style>
+        /* The Overlay (background) */
+        .overlay {
+            /* Height & width depends on how you want to reveal the overlay (see JS below) */
+            height: 100%;
+            width: 0;
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            background-color: rgb(0, 0, 0);
+            /* Black fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/opacity */
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            transition: 0.5s;
+            /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+        }
+
+        /* Position the content inside the overlay */
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            /* 25% from the top */
+            width: 100%;
+            /* 100% width */
+            text-align: center;
+            /* Centered text/links */
+            margin-top: 30px;
+            /* 30px top margin to avoid conflict with the close button on smaller screens */
+        }
+
+        /* The navigation links inside the overlay */
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            /* Display block instead of inline */
+            transition: 0.3s;
+            /* Transition effects on hover (color) */
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .overlay a:hover,
+        .overlay a:focus {
+            color: #f1f1f1;
+        }
+
+        /* Position the close button (top right corner) */
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+        /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px
+            }
+
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+    </style>
+    <script>
+        /* Open when someone clicks on the span element */
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+</head>
+
+<body>
+
+    <nav class="navbar bg-white">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="brand-and-toggler">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="assets/images/curriculum-vitae.png" alt="" class="navbar-brand-icon">
+                        <span class="navbar-brand-text">build <span>resume.</span>
+                    </a>
+
+
+                    <div id="myNav" class="overlay">
+
+                        <!-- Button to close the overlay navigation -->
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                        <!-- Overlay content -->
+                        <div class="overlay-content">
+                            <a href="#">About</a>
+                            <a href="#">Services</a>
+                            <a href="#">Clients</a>
+                            <a href="#">Contact</a>
+                        </div>
+
+                    </div>
+
+                    <!-- Use any element to open/show the overlay navigation menu -->
+                    <span onclick="openNav()" class="uil uil-bars" style="color:#1A91F0" width="100px" height="100px"></span>
+
+
+
+                    <!-- <div class="topnav" id="myTopnav">
+                        <a href="#home" class="active">Home</a>
+                        <a href="#news">News</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#about">About</a>
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
                         </a>
-                        <button type = "button" class = "navbar-toggler-btn">
-                            <div class = "bars">
-                                <div class = "bar"></div>
-                                <div class = "bar"></div>
-                                <div class = "bar"></div>
-                            </div>
-                        </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <header class = "header bg-bright" id = "header">
-            <div class = "container">
-                <div class = "header-content text-center">
-                    <h6 class = "text-uppercase text-blue-dark fs-14 fw-6 ls-1">online resume builder</h6>
-                    <h1 class = "lg-title">Only 2% of resumes make it pas the first round. Be in the top 2%</h1>
-                    <p class = "text-dark fs-18">Use professional field-tested resume templates that follow that exact 'resume rules' employers look for. Easy to use and done within minutes - try now for free!</p>
-                    <a href = "resume.html" class = "btn btn-primary text-uppercase">create my resume</a>
-                    <img src = "assets/images/dublin-resume-templates.avif">
-                </div>
+    <header class="header bg-bright" id="header">
+        <div class="container">
+            <div class="header-content text-center">
+                <h6 class="text-uppercase text-blue-dark fs-14 fw-6 ls-1">online resume builder</h6>
+                <h1 class="lg-title">Only 2% of resumes make it pas the first round. Be in the top 2%</h1>
+                <p class="text-dark fs-18">Use professional field-tested resume templates that follow that exact 'resume
+                    rules' employers look for. Easy to use and done within minutes - try now for free!</p>
+                <a href="resume.html" class="btn btn-primary text-uppercase">create my resume <span
+                        class="uil uil-clipboard-notes"></span></a>
+                <img src="assets/images/undraw_online_resume_re_ru7s.svg" width="300px" height="300px">
             </div>
-        </header>
+        </div>
+    </header>
 
-        <div class="section-one">
-            <div class="container">
-                <div class = "section-one-content">
-                    <div class="section-one-l">
-                        <img src = "assets/images/visual-0c7080adf17f1f207276f613447c924f667dab34b7ac415cd7ef653172defd0b.svg">
-                    </div>
-                    <div class = "section-one-r text-center">
-                        <h2 class = "lg-title">Use the best resume maker as your guide!</h2>
-                        <p class = "text">Getting that dream job can seem like an impossible task. We're here to change that. Give yourself a real advantage with the best online resume maker: created by experts, imporved by data, trusted by millions of professionals.</p>
-                        <div class = "btn-group">
-                            <a href = "resume.html" class = "btn btn-primary text-uppercase">create my resume</a>
-                            <a href = "#" class = "btn btn-secondary text-uppercase">watch video</a>
-                        </div>
+    <div class="section-one">
+        <div class="container">
+            <div class="section-one-content">
+                <div class="section-one-l">
+                    <img src="assets/images/undraw_education_f8ru.svg">
+                </div>
+                <div class="section-one-r text-center">
+                    <h2 class="lg-title">Use the best resume maker as your guide!</h2>
+                    <p class="text">Getting that dream job can seem like an impossible task. We're here to change that.
+                        Give yourself a real advantage with the best online resume maker: created by experts, imporved
+                        by data, trusted by millions of professionals.</p>
+                    <div class="btn-group">
+                        <a href="resume.html" class="btn btn-primary text-uppercase">create my resume <span
+                                class="uil uil-clipboard-alt"></span></a>
+                        <a href="#" class="btn btn-secondary text-uppercase">watch video <span
+                                class="uil uil-video"></span></a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class = "section-two bg-bright">
-            <div class="container">
-                <div class="section-two-content">
-                    <div class = "section-items">
-                        <div class = "section-item">
-                            <div class = "section-item-icon">
-                                <img src = "assets/images/feature-1-edf4481d69166ac81917d1e40e6597c8d61aa970ad44367ce78049bf830fbda5.svg" alt = "">
-                            </div>
-                            <h5 class = "section-item-title">Make a resume that wins interviews!</h5>
-                            <p class = "text">Use our resume maker with its advanced creation tools to tell professional story that engages recruiters, hiring managers and even CEOs.</p>
+    <div class="section-two bg-bright">
+        <div class="container">
+            <div class="section-two-content">
+                <div class="section-items">
+                    <div class="section-item">
+                        <div class="section-item-icon">
+                            <img src="assets/images/undraw_interview_re_e5jn.svg" alt="">
                         </div>
+                        <h5 class="section-item-title">Make a resume that wins interviews!</h5>
+                        <p class="text">Use our resume maker with its advanced creation tools to tell professional story
+                            that engages recruiters, hiring managers and even CEOs.</p>
+                    </div>
 
-                        <div class = "section-item">
-                            <div class = "section-item-icon">
-                                <img src = "assets/images/feature-2-a7a471bd973c02a55d1b3f8aff578cd3c9a4c5ac4fc74423d94ecc04aef3492b.svg" alt = "">
-                            </div>
-                            <h5 class = "section-item-title">Resume writing made easy!</h5>
-                            <p class = "text">Resume writing has never been this effortless. Pre-generated text, visual designs and more - all already integrated into the resume maker. Just fill in your details.</p>
+                    <div class="section-item">
+                        <div class="section-item-icon">
+                            <img src="assets/images/undraw_note_list_re_r4u9.svg" alt="">
                         </div>
+                        <h5 class="section-item-title">Resume writing made easy!</h5>
+                        <p class="text">Resume writing has never been this effortless. Pre-generated text, visual
+                            designs and more - all already integrated into the resume maker. Just fill in your details.
+                        </p>
+                    </div>
 
-                        <div class = "section-item">
-                            <div class = "section-item-icon">
-                                <img src = "assets/images/feature-3-4e87a82f83e260488c36f8105e26f439fdc3ee5009372bb5e12d9421f32eabdd.svg" alt = "">
-                            </div>
-                            <h5 class = "section-item-title">A recruiter-tested CV maker tool</h5>
-                            <p class = "text">Our resume builder and its pre-generated content are tested by recruiters and IT experts. We help your CV become truly competitive in the hiring process.</p>
+                    <div class="section-item">
+                        <div class="section-item-icon">
+                            <img src="assets/images/undraw_informed_decision_p2lh.svg" alt="">
                         </div>
+                        <h5 class="section-item-title">A recruiter-tested CV maker tool</h5>
+                        <p class="text">Our resume builder and its pre-generated content are tested by recruiters and IT
+                            experts. We help your CV become truly competitive in the hiring process.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <footer class = "footer bg-dark">
-            <div class="container">
-                <div class = "footer-content text-center">
-                    <p class="fs-15">&copy;Copyright 2022. All Rights Reserved - <span>build.resume</span></p>
-                </div>
+    <footer class="footer bg-dark">
+        <div class="container">
+            <div class="footer-content text-center">
+                <p class="fs-15">&copy;Copyright 2023. All Rights Reserved - by &nbsp; <span>@mansoor</span></p>
             </div>
-        </footer>
-        
-    </body>
+        </div>
+    </footer>
+
+</body>
+
 </html>
