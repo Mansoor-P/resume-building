@@ -466,9 +466,9 @@ a {
 }
 
 /* media queries */
-@media screen and (min-width: 300px) {
-.btn-secondary{
-      margin: 20px;
+@media screen and (min-width: 280px) {
+    .btn-secondary {
+        margin: 20px;
     }
 }
 
