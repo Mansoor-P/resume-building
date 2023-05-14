@@ -466,7 +466,7 @@ a {
 }
 
 /* media queries */
-@media screen and (min-width: 350px) {
+@media screen and (min-width: 300px) {
 .btn-secondary{
       margin: 20px;
     }
