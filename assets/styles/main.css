@@ -466,6 +466,12 @@ a {
 }
 
 /* media queries */
+@media screen and (min-width: 350px) {
+.btn-secondary{
+      margin: 20px;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .section-two .section-items {
         grid-template-columns: repeat(2, 1fr);
